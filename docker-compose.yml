@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"  # Маппинг порта для frontend
+    volumes:
+      - ./frontend:/app
+    environment:
+      - VITE_API_URL=http://backend:3000  # Пример переменной окружения для frontend
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # Маппинг порта для backend
+    volumes:
+      - ./backend:/app
+    environment:
+      - NODE_ENV=production
