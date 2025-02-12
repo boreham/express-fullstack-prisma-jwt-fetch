@@ -1,4 +1,15 @@
-### Login, Register, Logout приложение защиты ресурсов REST API JWT Express, TypeScript, Prisma, PostgreSQL.
+### Список зависимостей
+```
+express 
+typescript 
+prisma 
+```
+
+### СУБД
+```
+postgresql
+```
+
 ### Структура проекта:
 ```
 backend/
